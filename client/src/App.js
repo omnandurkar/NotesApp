@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import Home from "./view/Home";
+import AddNote from "./components/AddNote";
 
 
 function App() {
@@ -11,16 +12,19 @@ function App() {
       path: "/",
       element: <Home />,
     },
+    {
+      path: "/addnote",
+      element: <AddNote/>
+    }
 
   ]);
 
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<RouterProvider router={router} />);
+  
 
   return (
-    <div className="App">
-
-    </div>
+    <>
+    <RouterProvider router={router}/>
+    </>
   );
 }
 
