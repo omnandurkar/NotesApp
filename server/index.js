@@ -71,23 +71,25 @@ app.get("/notes/:id" , async(req, res) =>{
 
 })
 
-app.put("/notes/:id", async(req, res) =>{
-    const {id} = req.params;
-    const { title, content , category} = req.bosy;
-
-    await Note.updateOne({_id : id}, {$set: {
-        title : title,
-        content : content,
-        category: category,
-
-    }})
-
-    res.json({
-        success : true,
-        messgae : "Note Updated Successfully",
-        data : null
+app.put("/notes/:id", async (req, res) => {
+    const { id } = req.params;
+  
+    const { title, content, category } = req.body;
+  
+    await Note.updateOne({ _id: id }, {
+      $set: {
+        title: title,
+        content: content,
+        category: category
+      }
     })
-})
+  
+    res.json({
+      success: true,
+      message: "Note updated successfully",
+      data: null
+    })
+  })
 
 app.delete("/notes/:id", async (req, res) => {
     const { id } = req.params;
