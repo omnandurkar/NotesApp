@@ -42,7 +42,7 @@ function AddNote() {
             )}
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                    <label htmlFor="title" className="block font-medium">Title:</label>
+                    <label htmlFor="title" className="block font-medium">Title :</label>
                     <input
                         type="text"
                         id="title"
