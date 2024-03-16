@@ -20,9 +20,12 @@ function Home() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`${process.env.REACT_APP_API_URL}/notes/${id}`);
-            // Remove the deleted note from the state
-            setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id));
+            const confirmDelete = window.confirm('Are you sure you want to delete this note?');
+            if (confirmDelete) {
+                await axios.delete(`${process.env.REACT_APP_API_URL}/notes/${id}`);
+                // Remove the deleted note from the state
+                setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id));
+            }
         } catch (error) {
             console.error('Error deleting note:', error);
         }

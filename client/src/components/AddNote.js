@@ -64,7 +64,7 @@ function AddNote() {
                     ></textarea>
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="category" className="block font-medium">Category:</label>
+                    <label htmlFor="category" className="block font-medium">User:</label>
                     <input
                         type="text"
                         id="category"
