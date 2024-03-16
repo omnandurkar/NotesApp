@@ -31,6 +31,13 @@ function Home() {
         }
     };
 
+    const logout = () =>
+    {
+        const confirmLogout = window.confirm('Are you sure you want to log out?');
+        localStorage.clear();
+        window.location.reload();
+    }
+
     return (
         <div className="container mx-auto py-8">
             <h1 className="text-3xl font-bold mb-4">Notes</h1>
@@ -53,6 +60,13 @@ function Home() {
             <Link to="/addnote" className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-block">
                 Add New Note
             </Link>
+
+            <button onClick={logout} className=" border border-blue-600 my-4  rounded-sm drop-shadow-sm  flex ">
+                <span className='flex justify-center align-middle ' >
+                    <img src='https://cdn-icons-png.flaticon.com/128/300/300221.png' className='h-5 my-auto mx-3  ' alt='G-logo' />
+                    <h1 className='font-semibold hover:bg-blue-700 bg-blue-600 p-2 pe-5 text-gray-200'>Logout</h1>
+                </span>
+            </button>
         </div>
     );
 }
