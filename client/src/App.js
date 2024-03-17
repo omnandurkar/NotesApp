@@ -4,23 +4,32 @@ import './App.css';
 import Home from "./view/Home";
 import AddNote from "./components/AddNote";
 import Login from "./view/Login";
+import Update from "./view/Update";
 
 
 function App() {
 
   const router = createBrowserRouter([
+    // {
+    //   path: "/",
+    //   element: <Login />,
+    // },
     {
       path: "/",
-      element: <Login />,
+      element:<Home/>
     },
     {
       path: "/addnote",
       element: <AddNote/>
     },
     // {
-    //   path: "/login",
-    //   element: <Login/>
-    // }
+    //   path: "/home",
+    //   element: <Home/>
+    // },
+    {
+      path:"/update/:id",
+      element: <Update/>
+    }
 
   ]);
 

@@ -24,7 +24,7 @@
 
     return (
         <>
-        {value?<Home/>:
+        {/* {value?<Home/>: */}
             
             <section className="text-gray-600 body-font overflow-hidden bg-gray-50 shadow-inner">
             <div className="container px-5 py-24 mx-auto">
@@ -47,7 +47,8 @@
                 
             </div>
             </div>
-        </section>}
+        </section>
+        {/* } */}
         </>
     )
     }

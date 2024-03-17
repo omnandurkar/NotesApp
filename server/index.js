@@ -59,9 +59,7 @@ app.get("/notes/:id" , async(req, res) =>{
     // const id = req.params.id;
     const {id} = req.params;
 
-    const note = await Note.findeOne({
-        _id : id
-    })
+    const note = await Note.findById(id);
 
     res.json({
         success : true,

@@ -50,9 +50,14 @@ function Home() {
                             <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{note.category}</span>
                         </div>
                         <div className="mt-4">
-                            <button onClick={() => handleDelete(note._id)} className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded inline-block">
+                            <button onClick={() => handleDelete(note._id)} className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 mx-4 rounded inline-block">
                                 Delete
                             </button>
+                            <Link to={`/update/${note._id}`}>
+                            <button  className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded inline-block">
+                                Edit
+                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}
@@ -61,12 +66,12 @@ function Home() {
                 Add New Note
             </Link>
 
-            <button onClick={logout} className=" border border-blue-600 my-4  rounded-sm drop-shadow-sm  flex ">
+            {/* <button onClick={logout} className=" border border-blue-600 my-4  rounded-sm drop-shadow-sm  flex ">
                 <span className='flex justify-center align-middle ' >
                     <img src='https://cdn-icons-png.flaticon.com/128/300/300221.png' className='h-5 my-auto mx-3  ' alt='G-logo' />
                     <h1 className='font-semibold hover:bg-blue-700 bg-blue-600 p-2 pe-5 text-gray-200'>Logout</h1>
                 </span>
-            </button>
+            </button> */}
         </div>
     );
 }
